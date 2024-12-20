@@ -219,6 +219,7 @@ def make_extension(compute_capability):
 		],
 		extra_compile_args={"cxx": cflags, "nvcc": nvcc_flags},
 		libraries=["cuda"],
+		library_dirs=[torch.utils.cpp_extension._join_cuda_home('lib/stubs')],
 	)
 	return ext
 
